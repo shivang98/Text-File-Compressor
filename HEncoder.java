@@ -1,4 +1,4 @@
-// Developed by Shivang Agarwal
+// Contributed bu Shivang Agarwal
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -7,11 +7,11 @@ import java.util.HashMap;
 import july31.GenericHeap;
 
 public class HEncoder {
-	private HashMap<Character, String> encoder = new HashMap<>();
-	private HashMap<String, Character> decoder = new HashMap<>();
+	private HashMap<String, String> encoder = new HashMap<>();
+	private HashMap<String, String> decoder = new HashMap<>();
 
 	private static class Node {
-		char data;
+		String data;
 		int freq;
 		Node left;
 		Node right;
@@ -29,18 +29,19 @@ public class HEncoder {
 
 	public HEncoder(String feeder) {
 		// create frequency map
-		HashMap<Character, Integer> fm = new HashMap<>();
+		HashMap<String, Integer> fm = new HashMap<>();
 		for (int i = 0; i < feeder.length(); i++) {
-			if (fm.containsKey(feeder.charAt(i))) {
-				fm.put(feeder.charAt(i), fm.get(feeder.charAt(i)) + 1);
+			if (fm.containsKey(feeder.charAt(i) + "")) {
+				fm.put(feeder.charAt(i) + "", fm.get(feeder.charAt(i) + "") + 1);
 			} else {
-				fm.put(feeder.charAt(i), 1);
+				fm.put(feeder.charAt(i) + "", 1);
 			}
 		}
+		fm.put("\n", 5);
 		// create heap
 		GenericHeap<Node> heap = new GenericHeap<>(Node.Ctor);
-		ArrayList<Character> keys = new ArrayList<>(fm.keySet());
-		for (Character key : keys) {
+		ArrayList<String> keys = new ArrayList<>(fm.keySet());
+		for (String key : keys) {
 			Node node = new Node();
 			node.data = key;
 			node.freq = fm.get(key);
@@ -74,7 +75,7 @@ public class HEncoder {
 	public String compress(String str) {
 		String rv = "";
 		for (int i = 0; i < str.length(); i++) {
-			rv += encoder.get(str.charAt(i));
+			rv += encoder.get(str.charAt(i) + "");
 		}
 		return rv;
 	}

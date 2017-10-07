@@ -1,7 +1,8 @@
-// Developed by Shivang Agarwal
+// Contributed bu Shivang Agarwal
 
 public class HEncoderGuiClient {
 	public static void main(String[] args) {
+		@SuppressWarnings("unused")
 		HEncoderGui heg = new HEncoderGui();
 	}
 }
