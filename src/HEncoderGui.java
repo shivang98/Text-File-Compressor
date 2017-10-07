@@ -1,4 +1,4 @@
-// Contributed bu Shivang Agarwal
+// Contributed by Shivang Agarwal
 
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -18,13 +18,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-import aug12.HEncoder;
 
 //Paths to file.
-// src/aug12/text/text.txt
-// src/aug12/text.txt
-// F:/programming/workspace/Crux2Sum2017/src/aug12/text.txt
-// F:/programming/workspace/Crux2Sum2017/src/aug12/text.bin
+// src/text/text.txt
+// src/text.txt
 
 @SuppressWarnings("serial")
 public class HEncoderGui extends JFrame implements ActionListener {
@@ -184,12 +181,11 @@ public class HEncoderGui extends JFrame implements ActionListener {
 				}
 			}
 
-			// creating a new path to decompressed file
+			// creating a new path to Decoding file
 			StringBuilder Npath = new StringBuilder(path.substring(0, path.length() - 4));
 			Npath.append(".txt");
 			String decoded = he.decompress(binaryString);
-			// System.out.println(decoded);
-			// decompressing the file
+			// Decoding the file
 			PrintWriter writer = new PrintWriter(Npath.toString(), "UTF-8");
 			writer.println(decoded);
 			writer.close();

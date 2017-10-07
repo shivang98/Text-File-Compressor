@@ -1,4 +1,4 @@
-// Contributed bu Shivang Agarwal
+// Contributed by Shivang Agarwal
 
 public class HEncoderGuiClient {
 	public static void main(String[] args) {

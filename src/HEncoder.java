@@ -1,10 +1,8 @@
-// Contributed bu Shivang Agarwal
+// Contributed by Shivang Agarwal
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
-
-import july31.GenericHeap;
 
 public class HEncoder {
 	private HashMap<String, String> encoder = new HashMap<>();
